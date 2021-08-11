@@ -1,4 +1,5 @@
 ﻿using AcademiaDOJO_EF.Dominio;
+using AcademiaDOJO_EF.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,6 @@ namespace AcademiaDOJO_EF
         {
             InitializeComponent();
         }
-        //github
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             modalidadeBindingSource.DataSource = new AcademiaContext().Modalidades.ToList();
@@ -44,53 +44,30 @@ namespace AcademiaDOJO_EF
             if (formP.ShowDialog() == DialogResult.OK)
             {
                 professor.FromProfessor(temporario);
-                using (var db = new AcademiaContext())
+                if (new RepositoryProfessor().Save(professor, sender == btnNovoProfessor) > 0)
                 {
-
-
-                    if (db.Entry(professor).State == EntityState.Detached)
-                    {
-                        db.Set<Professor>().Attach(professor);
-                    }
-
-                    if (sender == btnNovoProfessor)
-                    {
-                        db.Entry(professor).State = EntityState.Added;
-                    }
-                    else
-                    {
-                        db.Entry(professor).State = EntityState.Modified;
-                    }
-
-                    if (db.SaveChanges() > 0)
-                    {
-                        dgvProfessor.Refresh();
-                    }
+                    dgvProfessor.Refresh();
                 }
-            }
-            else
-            {
-                if (sender != btnAlterarProfessor)
+                else
                 {
-                    professorBindingSource.MoveLast();
-                    professorBindingSource.RemoveCurrent();
+                    if (sender != btnAlterarProfessor)
+                    {
+                        professorBindingSource.MoveLast();
+                        professorBindingSource.RemoveCurrent();
+                    }
+                    dgvProfessor.Refresh();
                 }
-                dgvProfessor.Refresh();
             }
         }
 
         private void btnExcluirProfessor_Click(object sender, EventArgs e)
         {
-            if (professorBindingSource.Current != null)
+            var professor = professorBindingSource.Current as Professor;
+            if (professor == null) return;
+            if (new RepositoryProfessor().Delete(professor) > 0)
             {
-                using (var db = new AcademiaContext())
-                {
-                    var professor = professorBindingSource.Current as Professor;
-                    db.Entry(professor).State = EntityState.Deleted;
-                    professorBindingSource.Remove(professor);
-                    dgvProfessor.Refresh();
-                    db.SaveChanges();
-                }
+                professorBindingSource.Remove(professor);
+                dgvProfessor.Refresh();
             }
         }
 
@@ -112,26 +89,9 @@ namespace AcademiaDOJO_EF
             if (formM.ShowDialog() == DialogResult.OK)
             {
                 modalidade.FromModalidade(temporario);
-                using (var db = new AcademiaContext())
+                if (new RepositoryModalidade().Save(modalidade, sender == btnNovaModalidade) > 0)
                 {
-                    if (db.Entry(modalidade).State == EntityState.Detached)
-                    {
-                        db.Set<Modalidade>().Attach(modalidade);
-                    }
-
-                    if (sender == btnNovaModalidade)
-                    {
-                        db.Entry(modalidade).State = EntityState.Added;
-                    }
-                    else
-                    {
-                        db.Entry(modalidade).State = EntityState.Modified;
-                    }
-
-                    if (db.SaveChanges() > 0)
-                    {
-                        dgvModalidade.Refresh();
-                    }
+                    dgvModalidade.Refresh();
                 }
             }
             else
@@ -147,16 +107,12 @@ namespace AcademiaDOJO_EF
 
         private void btnExcluirModalidade_Click(object sender, EventArgs e)
         {
-            if (modalidadeBindingSource.Current != null)
+            var modalidade = modalidadeBindingSource.Current as Modalidade;
+            if (modalidade == null) return;
+            if (new RepositoryModalidade().Delete(modalidade) > 0)
             {
-                using (var db = new AcademiaContext())
-                {
-                    var modalidade = modalidadeBindingSource.Current as Modalidade;
-                    db.Entry(modalidade).State = EntityState.Deleted;
-                    modalidadeBindingSource.Remove(modalidade);
-                    dgvModalidade.Refresh();
-                    db.SaveChanges();
-                }
+                modalidadeBindingSource.Remove(modalidade);
+                dgvModalidade.Refresh();
             }
         }
 
