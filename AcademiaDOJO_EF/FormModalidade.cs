@@ -25,6 +25,8 @@ namespace AcademiaDOJO_EF
             txtNomeModalidade.DataBindings.Add("Text", modalidade, "Nome");
             txtPrecoHoraModalidade.DataBindings.Add("Text", modalidade, "PrecoHora");
             txtVezesSemanaModalidade.DataBindings.Add("Text", modalidade, "VezesSemana");
+
+            txtNomeModalidade.Enabled = String.IsNullOrEmpty(modalidade.Nome);
         }
     }
 }

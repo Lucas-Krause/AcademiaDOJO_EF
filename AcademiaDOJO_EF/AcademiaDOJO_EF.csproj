@@ -100,6 +100,12 @@
     <Compile Include="Dominio\Modalidade.cs" />
     <Compile Include="Dominio\Pessoa.cs" />
     <Compile Include="Dominio\Professor.cs" />
+    <Compile Include="FormAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAluno.Designer.cs">
+      <DependentUpon>FormAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormModalidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,9 +148,16 @@
     <Compile Include="Migrations\202108062314412_v0.6.designer.cs">
       <DependentUpon>202108062314412_v0.6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108112212545_v0.8.cs" />
+    <Compile Include="Migrations\202108112212545_v0.8.designer.cs">
+      <DependentUpon>202108112212545_v0.8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAluno.resx">
+      <DependentUpon>FormAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormModalidade.resx">
       <DependentUpon>FormModalidade.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108062314412_v0.6.resx">
       <DependentUpon>202108062314412_v0.6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108112212545_v0.8.resx">
+      <DependentUpon>202108112212545_v0.8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

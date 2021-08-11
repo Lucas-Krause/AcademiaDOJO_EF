@@ -139,9 +139,9 @@ namespace AcademiaDOJO_EF
             // btnCancelarProfessor
             // 
             this.btnCancelarProfessor.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelarProfessor.Location = new System.Drawing.Point(106, 170);
+            this.btnCancelarProfessor.Location = new System.Drawing.Point(95, 170);
             this.btnCancelarProfessor.Name = "btnCancelarProfessor";
-            this.btnCancelarProfessor.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarProfessor.Size = new System.Drawing.Size(86, 23);
             this.btnCancelarProfessor.TabIndex = 6;
             this.btnCancelarProfessor.Text = "Cancelar";
             this.btnCancelarProfessor.UseVisualStyleBackColor = true;

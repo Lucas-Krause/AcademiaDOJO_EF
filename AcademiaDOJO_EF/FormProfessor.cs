@@ -28,7 +28,7 @@ namespace AcademiaDOJO_EF
             mskTelefoneProfessor.DataBindings.Add("Text", professor, "Telefone");
             mskCPFProfessor.DataBindings.Add("Text", professor, "CPF");
 
-            mskCPFProfessor.ReadOnly = !String.IsNullOrEmpty(professor.CPF);
+            mskCPFProfessor.Enabled = String.IsNullOrEmpty(professor.CPF);
         }
     }
 }

@@ -30,7 +30,6 @@ namespace AcademiaDOJO_EF
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.modalidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancelarModalidade = new System.Windows.Forms.Button();
             this.btnSalvarModalidade = new System.Windows.Forms.Button();
             this.txtPrecoHoraModalidade = new System.Windows.Forms.TextBox();
@@ -39,19 +38,16 @@ namespace AcademiaDOJO_EF
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.modalidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // modalidadeBindingSource
-            // 
-            this.modalidadeBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Modalidade);
             // 
             // btnCancelarModalidade
             // 
             this.btnCancelarModalidade.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelarModalidade.Location = new System.Drawing.Point(125, 135);
+            this.btnCancelarModalidade.Location = new System.Drawing.Point(141, 132);
             this.btnCancelarModalidade.Name = "btnCancelarModalidade";
-            this.btnCancelarModalidade.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarModalidade.Size = new System.Drawing.Size(86, 23);
             this.btnCancelarModalidade.TabIndex = 18;
             this.btnCancelarModalidade.Text = "Cancelar";
             this.btnCancelarModalidade.UseVisualStyleBackColor = true;
@@ -59,7 +55,7 @@ namespace AcademiaDOJO_EF
             // btnSalvarModalidade
             // 
             this.btnSalvarModalidade.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSalvarModalidade.Location = new System.Drawing.Point(33, 135);
+            this.btnSalvarModalidade.Location = new System.Drawing.Point(60, 132);
             this.btnSalvarModalidade.Name = "btnSalvarModalidade";
             this.btnSalvarModalidade.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarModalidade.TabIndex = 17;
@@ -115,11 +111,16 @@ namespace AcademiaDOJO_EF
             this.label1.TabIndex = 8;
             this.label1.Text = "Nome";
             // 
+            // modalidadeBindingSource
+            // 
+            this.modalidadeBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Modalidade);
+            // 
             // FormModalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 191);
+            this.ClientSize = new System.Drawing.Size(250, 213);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancelarModalidade);
             this.Controls.Add(this.btnSalvarModalidade);
             this.Controls.Add(this.txtPrecoHoraModalidade);
@@ -128,7 +129,11 @@ namespace AcademiaDOJO_EF
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormModalidade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormModalidade";
             this.Load += new System.EventHandler(this.FormModalidade_Load);
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).EndInit();
