@@ -24,7 +24,7 @@ namespace AcademiaDOJO_EF
         {
             txtNomeProfessor.DataBindings.Add("Text", professor, "Nome");
             txtSalarioProfessor.DataBindings.Add("Text", professor, "SalarioHora");
-            txtTurnoProfessor.DataBindings.Add("Text", professor, "Turno");
+            cbxTurno.DataBindings.Add("SelectedItem", professor, "Turno");
             mskTelefoneProfessor.DataBindings.Add("Text", professor, "Telefone");
             mskCPFProfessor.DataBindings.Add("Text", professor, "CPF");
 

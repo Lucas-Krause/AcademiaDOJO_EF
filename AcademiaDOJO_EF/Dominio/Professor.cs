@@ -37,7 +37,7 @@ namespace AcademiaDOJO_EF.Dominio
 
         public override string ToString()
         {
-            return $"{Nome}";
+            return Nome;
         }
     }
 }

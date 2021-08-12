@@ -1,14 +1,7 @@
 ﻿using AcademiaDOJO_EF.Dominio;
 using AcademiaDOJO_EF.Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AcademiaDOJO_EF
@@ -43,28 +36,24 @@ namespace AcademiaDOJO_EF
             var temporario = new Professor();
             temporario = professor.Clone();
 
-            var formP = new FormProfessor(temporario);
-            if (formP.ShowDialog() == DialogResult.OK)
+            using (var formP = new FormProfessor(temporario))
             {
-                professor.FromProfessor(temporario);
-                if (new RepositoryProfessor().Save(professor, sender == btnNovoProfessor) > 0)
+                if (formP.ShowDialog() == DialogResult.OK)
                 {
-                    dgvProfessor.Refresh();
-                    MessageBox.Show($"Os dados do professor {professor.Nome} foram salvos com sucesso!",
-                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    professor.FromProfessor(temporario);
+                    if (new RepositoryProfessor().Save(professor, sender == btnNovoProfessor) > 0)
+                    {
+                        dgvProfessor.Refresh();
+                        ProfessorSaveMessage();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"Os dados do professor {professor.Nome} não foram salvos com sucesso.",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                if (sender == btnNovoProfessor)
-                {
-                    professorBindingSource.MoveLast();
-                    professorBindingSource.RemoveCurrent();
+                    if (sender == btnNovoProfessor)
+                    {
+                        professorBindingSource.MoveLast();
+                        professorBindingSource.RemoveCurrent();
+                    }
                 }
             }
         }
@@ -80,13 +69,7 @@ namespace AcademiaDOJO_EF
                 {
                     professorBindingSource.Remove(professor);
                     dgvProfessor.Refresh();
-                    MessageBox.Show($"O professor {professor.Nome} foi deletado com sucesso.",
-                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"O professor {professor.Nome} não foi deletado com sucesso.",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ProfessorDeleteMessage();
                 }
             }
         }
@@ -105,31 +88,26 @@ namespace AcademiaDOJO_EF
             var temporario = new Modalidade();
             temporario = modalidade.Clone();
 
-            var formM = new FormModalidade(temporario);
-            if (formM.ShowDialog() == DialogResult.OK)
+            using (var formM = new FormModalidade(temporario))
             {
-                modalidade.FromModalidade(temporario);
-                if (new RepositoryModalidade().Save(modalidade, sender == btnNovaModalidade) > 0)
+                if (formM.ShowDialog() == DialogResult.OK)
                 {
-                    dgvModalidade.Refresh();
-                    MessageBox.Show($"Os dados da modalidade {modalidade.Nome} foram salvos com sucesso!",
-                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    modalidade.FromModalidade(temporario);
+                    if (new RepositoryModalidade().Save(modalidade, sender == btnNovaModalidade) > 0)
+                    {
+                        dgvModalidade.Refresh();
+                        ModalidadeSaveMessage();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"Os dados da modalidade {modalidade.Nome} não foram salvos com sucesso.",
-                      "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    if (sender != btnAlterarModalidade)
+                    {
+                        modalidadeBindingSource.MoveLast();
+                        modalidadeBindingSource.RemoveCurrent();
+                    }
+                    dgvModalidade.Refresh();
                 }
-            }
-            else
-            {
-                if (sender != btnAlterarModalidade)
-                {
-                    modalidadeBindingSource.MoveLast();
-                    modalidadeBindingSource.RemoveCurrent();
-                }
-                dgvModalidade.Refresh();
             }
         }
 
@@ -144,13 +122,7 @@ namespace AcademiaDOJO_EF
                 {
                     modalidadeBindingSource.Remove(modalidade);
                     dgvModalidade.Refresh();
-                    MessageBox.Show($"A modalidade {modalidade.Nome} foi deletado com sucesso.",
-                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"A modalidade {modalidade.Nome} não foi deletado com sucesso.",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ModalidadeDeleteMessage();
                 }
             }
         }
@@ -169,30 +141,26 @@ namespace AcademiaDOJO_EF
             var temporario = new Aluno();
             temporario = aluno.Clone();
 
-            var formM = new FormAluno(temporario);
-            if (formM.ShowDialog() == DialogResult.OK)
+            using (var formA = new FormAluno(temporario))
             {
-                aluno.FromAluno(temporario);
-                if (new RepositoryAluno().Save(aluno, sender == btnNovoAluno) > 0)
+                if (formA.ShowDialog() == DialogResult.OK)
                 {
-                    dgvAluno.Refresh();
-                    MessageBox.Show($"O aluno {aluno.Nome} foi salvo com sucesso!",
-                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    aluno.FromAluno(temporario);
+                    if (new RepositoryAluno().Save(aluno, sender == btnNovoAluno) > 0)
+                    {
+                        dgvAluno.Refresh();
+                        AlunoSaveMessage();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"O aluno {aluno.Nome} não foi salvo com sucesso.",
-                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (sender != btnAlterarAluno)
+                    {
+                        alunoBindingSource1.MoveLast();
+                        alunoBindingSource1.RemoveCurrent();
+                    }
+                    dgvAluno.Refresh();
                 }
-            }
-            else
-            {
-                if (sender != btnAlterarAluno)
-                {
-                    alunoBindingSource1.MoveLast();
-                    alunoBindingSource1.RemoveCurrent();
-                }
-                dgvAluno.Refresh();
             }
         }
 
@@ -203,21 +171,57 @@ namespace AcademiaDOJO_EF
             if (MessageBox.Show($"Você realmente deseja excluir permanentemente o aluno {aluno.Nome}?",
                "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-
                 if (new RepositoryAluno().Delete(aluno) > 0)
                 {
                     alunoBindingSource1.Remove(aluno);
                     dgvAluno.Refresh();
-                    MessageBox.Show($"O aluno  {aluno.Nome} foi deletado com sucesso.",
-                       "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"O aluno {aluno.Nome} não foi deletado com sucesso.",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    AlunoDeleteMessage();
                 }
             }
 
+        }
+
+        public void ProfessorSaveMessage()
+        {
+            var professor = professorBindingSource.Current as Professor;
+            MessageBox.Show($"Os dados do professor {professor.Nome} foram salvos com sucesso!",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void ProfessorDeleteMessage()
+        {
+            var professor = professorBindingSource.Current as Professor;
+            MessageBox.Show($"O professor {professor.Nome} foi deletado com sucesso.",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void ModalidadeSaveMessage()
+        {
+            var modalidade = modalidadeBindingSource.Current as Modalidade;
+            MessageBox.Show($"Os dados da modalidade {modalidade.Nome} foram salvos com sucesso!",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void ModalidadeDeleteMessage()
+        {
+            var modalidade = modalidadeBindingSource.Current as Modalidade;
+            
+            MessageBox.Show($"A modalidade {modalidade.Nome} foi deletado com sucesso.",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void AlunoSaveMessage()
+        {
+            var aluno = alunoBindingSource1.Current as Aluno;
+            MessageBox.Show($"O aluno {aluno.Nome} foi salvo com sucesso!",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void AlunoDeleteMessage()
+        {
+            var aluno = alunoBindingSource1.Current as Aluno;
+            MessageBox.Show($"O aluno  {aluno.Nome} foi deletado com sucesso.",
+                       "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

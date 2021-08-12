@@ -22,21 +22,32 @@ namespace AcademiaDOJO_EF
 
         private void FormModalidade_Load(object sender, EventArgs e)
         {
+            cbxVezesSemana.SelectedIndex = modalidade.VezesSemana - 1;
             txtNomeModalidade.DataBindings.Add("Text", modalidade, "Nome");
             txtPrecoHoraModalidade.DataBindings.Add("Text", modalidade, "PrecoHora");
-            txtVezesSemanaModalidade.DataBindings.Add("Text", modalidade, "VezesSemana");
-
-            txtNomeModalidade.Enabled = String.IsNullOrEmpty(modalidade.Nome);
+            cbxVezesSemana.DataBindings.Add("SelectedItem", modalidade, "VezesSemana");
             professorBindingSource.DataSource = new AcademiaContext().Professores.ToList();
 
-            cbxProfessor.SelectedItem = modalidade.Professor;
+            txtNomeModalidade.Enabled = String.IsNullOrEmpty(modalidade.Nome);
+            SelecionaProfessorAtual();
         }
 
-        private void cbxProfessor_SelectionChangeCommitted(object sender, EventArgs e)
+        private void SelecionaProfessorAtual()
         {
-            var professor = cbxProfessor.SelectedItem as Professor;
-            if (professor == null) return;
-            modalidade.Professor = professor;
+            foreach (var item in cbxProfessor.Items)
+            {
+                var _modalidade = item as Modalidade;
+                if (_modalidade is null) return;
+                if (_modalidade.Professor.CPF == modalidade.Professor.CPF)
+                {
+                    cbxProfessor.SelectedItem = item;
+                }
+            }
+        }
+
+        private void cbxProfessor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            modalidade.Professor = cbxProfessor.SelectedItem as Professor;
         }
     }
 }
