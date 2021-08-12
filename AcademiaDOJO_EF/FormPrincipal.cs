@@ -159,7 +159,6 @@ namespace AcademiaDOJO_EF
                         alunoBindingSource1.MoveLast();
                         alunoBindingSource1.RemoveCurrent();
                     }
-                    dgvAluno.Refresh();
                 }
             }
         }

@@ -11,7 +11,7 @@ namespace AcademiaDOJO_EF.Dominio
     {
         [MaxLength(100)]
         public string Nome { get; set; }
-        [MaxLength(14)]
+        [MaxLength(15)]
         public string Telefone { get; set; }
         [MaxLength(14) , Key]
         public string CPF { get; set; }

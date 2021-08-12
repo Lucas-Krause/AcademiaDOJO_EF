@@ -18,7 +18,6 @@ namespace AcademiaDOJO_EF.Repository
                 {
                     db.Set<Aluno>().Attach(aluno);
                 }
-
                 if (AddOrUpdate)
                 {
                     db.Entry(aluno).State = EntityState.Added;

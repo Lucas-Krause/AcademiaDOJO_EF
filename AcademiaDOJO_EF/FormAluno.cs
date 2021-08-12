@@ -25,6 +25,26 @@ namespace AcademiaDOJO_EF
             txtNome.DataBindings.Add("Text", aluno, "Nome");
             mskCPF.DataBindings.Add("Text", aluno, "CPF");
             mskTelefone.DataBindings.Add("Text", aluno, "Telefone");
+            modalidadeBindingSource.DataSource = new AcademiaContext().Modalidades.ToList();
+            cbxModalidade.DataBindings.Add("SelectedItem", aluno, "Modalidade");
+
+            if (aluno.Modalidade == null)
+            {
+                cbxModalidade.SelectedItem = null;
+            }
+            else
+            {
+                foreach (var item in cbxModalidade.Items)
+                {
+                    var modalidade = item as Modalidade;
+                    if (modalidade == null) return;
+                    if (modalidade.Nome == aluno.Modalidade.Nome)
+                    {
+                        cbxModalidade.SelectedItem = item;
+                    }
+                }
+            }
+
             mskCPF.Enabled = String.IsNullOrEmpty(aluno.CPF);
         }
     }

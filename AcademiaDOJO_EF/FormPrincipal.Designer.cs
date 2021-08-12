@@ -96,7 +96,7 @@ namespace AcademiaDOJO_EF
             // 
             this.lblProfessor.AutoSize = true;
             this.lblProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfessor.Location = new System.Drawing.Point(9, 6);
+            this.lblProfessor.Location = new System.Drawing.Point(8, 3);
             this.lblProfessor.Name = "lblProfessor";
             this.lblProfessor.Size = new System.Drawing.Size(86, 20);
             this.lblProfessor.TabIndex = 2;
@@ -127,7 +127,7 @@ namespace AcademiaDOJO_EF
             // 
             this.lblAluno.AutoSize = true;
             this.lblAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAluno.Location = new System.Drawing.Point(1255, -2);
+            this.lblAluno.Location = new System.Drawing.Point(1255, 3);
             this.lblAluno.Name = "lblAluno";
             this.lblAluno.Size = new System.Drawing.Size(55, 20);
             this.lblAluno.TabIndex = 5;
@@ -139,7 +139,7 @@ namespace AcademiaDOJO_EF
             this.btnNovoAluno.Name = "btnNovoAluno";
             this.btnNovoAluno.Size = new System.Drawing.Size(75, 23);
             this.btnNovoAluno.TabIndex = 6;
-            this.btnNovoAluno.Text = "Novo";
+            this.btnNovoAluno.Text = "Novo...";
             this.btnNovoAluno.UseVisualStyleBackColor = true;
             this.btnNovoAluno.Click += new System.EventHandler(this.btnNovoAluno_Click);
             // 
@@ -159,7 +159,7 @@ namespace AcademiaDOJO_EF
             this.btnAlterarAluno.Name = "btnAlterarAluno";
             this.btnAlterarAluno.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarAluno.TabIndex = 9;
-            this.btnAlterarAluno.Text = "Alterar";
+            this.btnAlterarAluno.Text = "Alterar...";
             this.btnAlterarAluno.UseVisualStyleBackColor = true;
             this.btnAlterarAluno.Click += new System.EventHandler(this.btnNovoAluno_Click);
             // 
@@ -169,7 +169,7 @@ namespace AcademiaDOJO_EF
             this.btnAlterarProfessor.Name = "btnAlterarProfessor";
             this.btnAlterarProfessor.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarProfessor.TabIndex = 17;
-            this.btnAlterarProfessor.Text = "Alterar";
+            this.btnAlterarProfessor.Text = "Alterar...";
             this.btnAlterarProfessor.UseVisualStyleBackColor = true;
             this.btnAlterarProfessor.Click += new System.EventHandler(this.btnNovoProfessor_Click);
             // 
@@ -189,7 +189,7 @@ namespace AcademiaDOJO_EF
             this.btnNovoProfessor.Name = "btnNovoProfessor";
             this.btnNovoProfessor.Size = new System.Drawing.Size(75, 23);
             this.btnNovoProfessor.TabIndex = 14;
-            this.btnNovoProfessor.Text = "Novo";
+            this.btnNovoProfessor.Text = "Novo...";
             this.btnNovoProfessor.UseVisualStyleBackColor = true;
             this.btnNovoProfessor.Click += new System.EventHandler(this.btnNovoProfessor_Click);
             // 
@@ -218,7 +218,7 @@ namespace AcademiaDOJO_EF
             // 
             this.lblModalidade.AutoSize = true;
             this.lblModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModalidade.Location = new System.Drawing.Point(695, 6);
+            this.lblModalidade.Location = new System.Drawing.Point(695, 3);
             this.lblModalidade.Name = "lblModalidade";
             this.lblModalidade.Size = new System.Drawing.Size(101, 20);
             this.lblModalidade.TabIndex = 3;
@@ -230,7 +230,7 @@ namespace AcademiaDOJO_EF
             this.btnNovaModalidade.Name = "btnNovaModalidade";
             this.btnNovaModalidade.Size = new System.Drawing.Size(75, 23);
             this.btnNovaModalidade.TabIndex = 10;
-            this.btnNovaModalidade.Text = "Novo";
+            this.btnNovaModalidade.Text = "Novo...";
             this.btnNovaModalidade.UseVisualStyleBackColor = true;
             this.btnNovaModalidade.Click += new System.EventHandler(this.btnNovaModalidade_Click);
             // 
@@ -250,7 +250,7 @@ namespace AcademiaDOJO_EF
             this.btnAlterarModalidade.Name = "btnAlterarModalidade";
             this.btnAlterarModalidade.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarModalidade.TabIndex = 13;
-            this.btnAlterarModalidade.Text = "Alterar";
+            this.btnAlterarModalidade.Text = "Alterar...";
             this.btnAlterarModalidade.UseVisualStyleBackColor = true;
             this.btnAlterarModalidade.Click += new System.EventHandler(this.btnNovaModalidade_Click);
             // 

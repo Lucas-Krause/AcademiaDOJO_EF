@@ -117,34 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="professorBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="Modalidade.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="alunoBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>597, 18</value>
-  </metadata>
-  <metadata name="professorDataGridViewTextBoxColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="modalidadeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>324, 17</value>
-  </metadata>
-  <metadata name="Modalidade.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="alunoBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>597, 18</value>
-  </metadata>
-  <metadata name="professorDataGridViewTextBoxColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="modalidadeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>324, 17</value>
-  </metadata>
-  <metadata name="professorBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
+  </data>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>public</value>
+  </data>
 </root>

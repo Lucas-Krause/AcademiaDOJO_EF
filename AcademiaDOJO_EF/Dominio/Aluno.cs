@@ -16,7 +16,8 @@ namespace AcademiaDOJO_EF.Dominio
             {
                 CPF = this.CPF,
                 Nome = this.Nome,
-                Telefone = this.Telefone
+                Telefone = this.Telefone,
+                Modalidade = this.Modalidade
             };
             return aluno;
         }
@@ -26,6 +27,7 @@ namespace AcademiaDOJO_EF.Dominio
             this.CPF = aluno.CPF;
             this.Nome = aluno.Nome;
             this.Telefone = aluno.Telefone;
+            this.Modalidade = aluno.Modalidade;
         }
     }
 }
