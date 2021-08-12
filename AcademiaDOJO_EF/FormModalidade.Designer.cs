@@ -129,7 +129,6 @@ namespace AcademiaDOJO_EF
             this.cbxProfessor.Name = "cbxProfessor";
             this.cbxProfessor.Size = new System.Drawing.Size(103, 21);
             this.cbxProfessor.TabIndex = 3;
-            this.cbxProfessor.SelectedIndexChanged += new System.EventHandler(this.cbxProfessor_SelectedIndexChanged);
             // 
             // professorBindingSource
             // 

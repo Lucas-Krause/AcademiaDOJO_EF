@@ -12,9 +12,7 @@ namespace AcademiaDOJO_EF.Dominio
     {
         public DbSet<Professor> Professores { get; set; }
         public DbSet<Modalidade> Modalidades { get; set; }
-
         public DbSet<Aluno> Alunos { get; set; }
-
         public DbSet<Pessoa> Pessoas { get; set; }
 
 

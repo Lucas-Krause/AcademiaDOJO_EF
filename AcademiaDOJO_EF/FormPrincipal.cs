@@ -191,7 +191,7 @@ namespace AcademiaDOJO_EF
         public void ProfessorDeleteMessage()
         {
             var professor = professorBindingSource.Current as Professor;
-            MessageBox.Show($"O professor {professor.Nome} foi deletado com sucesso.",
+            MessageBox.Show($"O professor foi deletado com sucesso.",
                         "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -206,7 +206,7 @@ namespace AcademiaDOJO_EF
         {
             var modalidade = modalidadeBindingSource.Current as Modalidade;
             
-            MessageBox.Show($"A modalidade {modalidade.Nome} foi deletado com sucesso.",
+            MessageBox.Show($"A modalidade foi deletada com sucesso.",
                         "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -220,7 +220,7 @@ namespace AcademiaDOJO_EF
         public void AlunoDeleteMessage()
         {
             var aluno = alunoBindingSource1.Current as Aluno;
-            MessageBox.Show($"O aluno  {aluno.Nome} foi deletado com sucesso.",
+            MessageBox.Show($"O aluno foi deletado com sucesso.",
                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

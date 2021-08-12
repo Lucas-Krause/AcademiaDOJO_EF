@@ -170,7 +170,7 @@ namespace AcademiaDOJO_EF
             this.cbxTurno.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTurno.Name = "cbxTurno";
             this.cbxTurno.Size = new System.Drawing.Size(93, 21);
-            this.cbxTurno.TabIndex = 8;
+            this.cbxTurno.TabIndex = 3;
             // 
             // FormProfessor
             // 

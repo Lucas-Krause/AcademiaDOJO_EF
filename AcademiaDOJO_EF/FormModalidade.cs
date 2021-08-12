@@ -28,26 +28,26 @@ namespace AcademiaDOJO_EF
             cbxVezesSemana.DataBindings.Add("SelectedItem", modalidade, "VezesSemana");
             professorBindingSource.DataSource = new AcademiaContext().Professores.ToList();
 
-            txtNomeModalidade.Enabled = String.IsNullOrEmpty(modalidade.Nome);
-            SelecionaProfessorAtual();
-        }
+            cbxProfessor.DataBindings.Add("SelectedItem", modalidade, "Professor");
 
-        private void SelecionaProfessorAtual()
-        {
-            foreach (var item in cbxProfessor.Items)
+            if (modalidade.Professor == null)
             {
-                var _modalidade = item as Modalidade;
-                if (_modalidade is null) return;
-                if (_modalidade.Professor.CPF == modalidade.Professor.CPF)
+                cbxProfessor.SelectedItem = null;
+            }
+            else
+            {
+                foreach (var item in cbxProfessor.Items)
                 {
-                    cbxProfessor.SelectedItem = item;
+                    var professor = item as Professor;
+                    if (professor == null) return;
+                    if (professor.CPF == modalidade.Professor.CPF)
+                    {
+                        cbxProfessor.SelectedItem = item;
+                    }
                 }
             }
-        }
 
-        private void cbxProfessor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            modalidade.Professor = cbxProfessor.SelectedItem as Professor;
+            txtNomeModalidade.Enabled = String.IsNullOrEmpty(modalidade.Nome);
         }
     }
 }

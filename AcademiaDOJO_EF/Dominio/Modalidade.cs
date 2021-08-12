@@ -20,7 +20,8 @@ namespace AcademiaDOJO_EF.Dominio
             {
                 Nome = this.Nome,
                 VezesSemana = this.VezesSemana,
-                PrecoHora = this.PrecoHora
+                PrecoHora = this.PrecoHora,
+                Professor = this.Professor
             };
             return modalidade;
         }
@@ -30,6 +31,7 @@ namespace AcademiaDOJO_EF.Dominio
             this.Nome = modalidade.Nome;
             this.VezesSemana = modalidade.VezesSemana;
             this.PrecoHora = modalidade.PrecoHora;
+            this.Professor = modalidade.Professor;
         }
 
         public override string ToString()
