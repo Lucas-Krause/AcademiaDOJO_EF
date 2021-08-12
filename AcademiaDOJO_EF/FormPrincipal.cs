@@ -47,15 +47,21 @@ namespace AcademiaDOJO_EF
                 if (new RepositoryProfessor().Save(professor, sender == btnNovoProfessor) > 0)
                 {
                     dgvProfessor.Refresh();
+                    MessageBox.Show($"Os dados do professor {professor.Nome} foram salvos com sucesso!",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    if (sender != btnAlterarProfessor)
-                    {
-                        professorBindingSource.MoveLast();
-                        professorBindingSource.RemoveCurrent();
-                    }
-                    dgvProfessor.Refresh();
+                    MessageBox.Show($"Os dados do professor {professor.Nome} não foram salvos com sucesso.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                if (sender == btnNovoProfessor)
+                {
+                    professorBindingSource.MoveLast();
+                    professorBindingSource.RemoveCurrent();
                 }
             }
         }
@@ -64,10 +70,21 @@ namespace AcademiaDOJO_EF
         {
             var professor = professorBindingSource.Current as Professor;
             if (professor == null) return;
-            if (new RepositoryProfessor().Delete(professor) > 0)
+            if (MessageBox.Show($"Você realmente deseja excluir permanentemente o professor {professor.Nome}?",
+                "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                professorBindingSource.Remove(professor);
-                dgvProfessor.Refresh();
+                if (new RepositoryProfessor().Delete(professor) > 0)
+                {
+                    professorBindingSource.Remove(professor);
+                    dgvProfessor.Refresh();
+                    MessageBox.Show($"O professor {professor.Nome} foi deletado com sucesso.",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"O professor {professor.Nome} não foi deletado com sucesso.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -92,6 +109,14 @@ namespace AcademiaDOJO_EF
                 if (new RepositoryModalidade().Save(modalidade, sender == btnNovaModalidade) > 0)
                 {
                     dgvModalidade.Refresh();
+                    MessageBox.Show($"Os dados da modalidade {modalidade.Nome} foram salvos com sucesso!",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"Os dados da modalidade {modalidade.Nome} não foram salvos com sucesso.",
+                      "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
             }
             else
@@ -109,10 +134,22 @@ namespace AcademiaDOJO_EF
         {
             var modalidade = modalidadeBindingSource.Current as Modalidade;
             if (modalidade == null) return;
-            if (new RepositoryModalidade().Delete(modalidade) > 0)
+            if (MessageBox.Show($"Você realmente deseja excluir permanentemente a modalidade {modalidade.Nome}?",
+                "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                modalidadeBindingSource.Remove(modalidade);
-                dgvModalidade.Refresh();
+
+                if (new RepositoryModalidade().Delete(modalidade) > 0)
+                {
+                    modalidadeBindingSource.Remove(modalidade);
+                    dgvModalidade.Refresh();
+                    MessageBox.Show($"A modalidade {modalidade.Nome} foi deletado com sucesso.",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"A modalidade {modalidade.Nome} não foi deletado com sucesso.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -123,35 +160,27 @@ namespace AcademiaDOJO_EF
                 alunoBindingSource1.Add(new Aluno());
                 alunoBindingSource1.MoveLast();
             }
+
             var aluno = alunoBindingSource1.Current as Aluno;
             if (aluno == null) return;
 
-            var temporario = aluno.Clone();
+            var temporario = new Aluno();
+            temporario = aluno.Clone();
 
-            var formA = new FormAluno(temporario);
-            if (formA.ShowDialog() == DialogResult.OK)
+            var formM = new FormAluno(temporario);
+            if (formM.ShowDialog() == DialogResult.OK)
             {
                 aluno.FromAluno(temporario);
-                using (var db = new AcademiaContext())
+                if (new RepositoryAluno().Save(aluno, sender == btnNovoAluno) > 0)
                 {
-                    if (db.Entry(aluno).State == EntityState.Detached)
-                    {
-                        db.Set<Aluno>().Attach(aluno);
-                    }
-
-                    if (sender == btnNovoAluno)
-                    {
-                        db.Entry(aluno).State = EntityState.Added;
-                    }
-                    else
-                    {
-                        db.Entry(aluno).State = EntityState.Modified;
-                    }
-
-                    if (db.SaveChanges() > 0)
-                    {
-                        dgvAluno.Refresh();
-                    }
+                    dgvAluno.Refresh();
+                    MessageBox.Show($"O aluno {aluno.Nome} foi salvo com sucesso!",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"O aluno {aluno.Nome} não foi salvo com sucesso.",
+                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -167,17 +196,26 @@ namespace AcademiaDOJO_EF
 
         private void btnExcluirAluno_Click(object sender, EventArgs e)
         {
-            if (alunoBindingSource1.Current != null)
+            var aluno = alunoBindingSource1.Current as Aluno;
+            if (aluno == null) return;
+            if (MessageBox.Show($"Você realmente deseja excluir permanentemente o aluno {aluno.Nome}?",
+               "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                using (var db = new AcademiaContext())
+
+                if (new RepositoryAluno().Delete(aluno) > 0)
                 {
-                    var aluno = alunoBindingSource1.Current as Aluno;
-                    db.Entry(aluno).State = EntityState.Deleted;
                     alunoBindingSource1.Remove(aluno);
                     dgvAluno.Refresh();
-                    db.SaveChanges();
+                    MessageBox.Show($"O aluno  {aluno.Nome} foi deletado com sucesso.",
+                       "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"O aluno {aluno.Nome} não foi deletado com sucesso.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+                
         }
     }
 }

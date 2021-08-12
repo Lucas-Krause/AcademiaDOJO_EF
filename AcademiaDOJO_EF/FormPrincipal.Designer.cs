@@ -59,14 +59,12 @@ namespace AcademiaDOJO_EF
             this.btnNovaModalidade = new System.Windows.Forms.Button();
             this.btnExcluirModalidade = new System.Windows.Forms.Button();
             this.btnAlterarModalidade = new System.Windows.Forms.Button();
-            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProfessor
@@ -362,10 +360,6 @@ namespace AcademiaDOJO_EF
             this.btnAlterarModalidade.UseVisualStyleBackColor = true;
             this.btnAlterarModalidade.Click += new System.EventHandler(this.btnNovaModalidade_Click);
             // 
-            // alunoBindingSource
-            // 
-            this.alunoBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Aluno);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -398,7 +392,6 @@ namespace AcademiaDOJO_EF
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,7 +403,6 @@ namespace AcademiaDOJO_EF
         private System.Windows.Forms.BindingSource professorBindingSource;
         private System.Windows.Forms.BindingSource modalidadeBindingSource;
         private System.Windows.Forms.Label lblProfessor;
-        private System.Windows.Forms.BindingSource alunoBindingSource;
         private System.Windows.Forms.DataGridView dgvAluno;
         private System.Windows.Forms.BindingSource alunoBindingSource1;
         private System.Windows.Forms.Label lblAluno;
