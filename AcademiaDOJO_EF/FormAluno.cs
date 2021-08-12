@@ -26,6 +26,7 @@ namespace AcademiaDOJO_EF
             mskCPF.DataBindings.Add("Text", aluno, "CPF");
             mskTelefone.DataBindings.Add("Text", aluno, "Telefone");
             modalidadeBindingSource.DataSource = new AcademiaContext().Modalidades.ToList();
+
             cbxModalidade.DataBindings.Add("SelectedItem", aluno, "Modalidade");
 
             if (aluno.Modalidade == null)
