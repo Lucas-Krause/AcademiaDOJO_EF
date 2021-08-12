@@ -21,9 +21,12 @@ namespace AcademiaDOJO_EF
         }
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            modalidadeBindingSource.DataSource = new AcademiaContext().Modalidades.ToList();
-            professorBindingSource.DataSource = new AcademiaContext().Professores.ToList();
-            alunoBindingSource1.DataSource = new AcademiaContext().Alunos.ToList();
+            using (var db = new AcademiaContext())
+            {
+                modalidadeBindingSource.DataSource = db.Modalidades.ToList();
+                professorBindingSource.DataSource = db.Professores.ToList();
+                alunoBindingSource1.DataSource = db.Alunos.ToList();
+            }
         }
 
         private void btnNovoProfessor_Click(object sender, EventArgs e)
@@ -137,7 +140,6 @@ namespace AcademiaDOJO_EF
             if (MessageBox.Show($"Você realmente deseja excluir permanentemente a modalidade {modalidade.Nome}?",
                 "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-
                 if (new RepositoryModalidade().Delete(modalidade) > 0)
                 {
                     modalidadeBindingSource.Remove(modalidade);
@@ -215,7 +217,7 @@ namespace AcademiaDOJO_EF
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-                
+
         }
     }
 }

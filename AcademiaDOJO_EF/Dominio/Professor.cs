@@ -34,5 +34,10 @@ namespace AcademiaDOJO_EF.Dominio
             this.Turno = professor.Turno;
             this.SalarioHora = professor.SalarioHora;
         }
+
+        public override string ToString()
+        {
+            return $"{Nome}";
+        }
     }
 }

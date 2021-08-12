@@ -27,6 +27,16 @@ namespace AcademiaDOJO_EF
             txtVezesSemanaModalidade.DataBindings.Add("Text", modalidade, "VezesSemana");
 
             txtNomeModalidade.Enabled = String.IsNullOrEmpty(modalidade.Nome);
+            professorBindingSource.DataSource = new AcademiaContext().Professores.ToList();
+
+            cbxProfessor.SelectedItem = modalidade.Professor;
+        }
+
+        private void cbxProfessor_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var professor = cbxProfessor.SelectedItem as Professor;
+            if (professor == null) return;
+            modalidade.Professor = professor;
         }
     }
 }

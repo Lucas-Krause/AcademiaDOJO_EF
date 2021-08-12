@@ -12,8 +12,8 @@ namespace AcademiaDOJO_EF.Dominio
         [MaxLength(100), Key]
         public string Nome { get; set; }
         public int VezesSemana { get; set; }
-        public double PrecoHora { get; set; }     
-        
+        public double PrecoHora { get; set; }
+        public virtual Professor Professor { get; set; }
         public Modalidade Clone()
         {
             var modalidade = new Modalidade()
@@ -30,6 +30,11 @@ namespace AcademiaDOJO_EF.Dominio
             this.Nome = modalidade.Nome;
             this.VezesSemana = modalidade.VezesSemana;
             this.PrecoHora = modalidade.PrecoHora;
+        }
+
+        public override string ToString()
+        {
+            return $"{Nome}";
         }
     }
 }

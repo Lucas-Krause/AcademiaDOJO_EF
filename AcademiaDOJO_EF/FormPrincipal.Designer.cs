@@ -31,18 +31,8 @@ namespace AcademiaDOJO_EF
         {
             this.components = new System.ComponentModel.Container();
             this.dgvProfessor = new System.Windows.Forms.DataGridView();
-            this.nomeDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salarioHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblProfessor = new System.Windows.Forms.Label();
             this.dgvAluno = new System.Windows.Forms.DataGridView();
-            this.nomeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPFDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblAluno = new System.Windows.Forms.Label();
             this.btnNovoAluno = new System.Windows.Forms.Button();
             this.btnExcluirAluno = new System.Windows.Forms.Button();
@@ -51,20 +41,31 @@ namespace AcademiaDOJO_EF
             this.btnExcluirProfessor = new System.Windows.Forms.Button();
             this.btnNovoProfessor = new System.Windows.Forms.Button();
             this.dgvModalidade = new System.Windows.Forms.DataGridView();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vezesSemanaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precoHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modalidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblModalidade = new System.Windows.Forms.Label();
             this.btnNovaModalidade = new System.Windows.Forms.Button();
             this.btnExcluirModalidade = new System.Windows.Forms.Button();
             this.btnAlterarModalidade = new System.Windows.Forms.Button();
+            this.nomeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPFDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vezesSemanaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modalidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nomeDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salarioHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Professor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProfessor
@@ -88,55 +89,6 @@ namespace AcademiaDOJO_EF
             this.dgvProfessor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProfessor.Size = new System.Drawing.Size(680, 240);
             this.dgvProfessor.TabIndex = 0;
-            // 
-            // nomeDataGridViewTextBoxColumn3
-            // 
-            this.nomeDataGridViewTextBoxColumn3.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn3.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn3.Name = "nomeDataGridViewTextBoxColumn3";
-            this.nomeDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cPFDataGridViewTextBoxColumn
-            // 
-            this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
-            this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
-            this.cPFDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
-            this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cPFDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // turnoDataGridViewTextBoxColumn
-            // 
-            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
-            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
-            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // salarioHoraDataGridViewTextBoxColumn
-            // 
-            this.salarioHoraDataGridViewTextBoxColumn.DataPropertyName = "SalarioHora";
-            this.salarioHoraDataGridViewTextBoxColumn.HeaderText = "SalarioHora";
-            this.salarioHoraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.salarioHoraDataGridViewTextBoxColumn.Name = "salarioHoraDataGridViewTextBoxColumn";
-            this.salarioHoraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.salarioHoraDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // professorBindingSource
-            // 
-            this.professorBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Professor);
             // 
             // lblProfessor
             // 
@@ -166,40 +118,6 @@ namespace AcademiaDOJO_EF
             this.dgvAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAluno.Size = new System.Drawing.Size(454, 150);
             this.dgvAluno.TabIndex = 4;
-            // 
-            // nomeDataGridViewTextBoxColumn2
-            // 
-            this.nomeDataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn2.HeaderText = "Nome - Aluno";
-            this.nomeDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn2.Name = "nomeDataGridViewTextBoxColumn2";
-            this.nomeDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nomeDataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // telefoneDataGridViewTextBoxColumn1
-            // 
-            this.telefoneDataGridViewTextBoxColumn1.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn1.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.telefoneDataGridViewTextBoxColumn1.Name = "telefoneDataGridViewTextBoxColumn1";
-            this.telefoneDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.telefoneDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // cPFDataGridViewTextBoxColumn1
-            // 
-            this.cPFDataGridViewTextBoxColumn1.DataPropertyName = "CPF";
-            this.cPFDataGridViewTextBoxColumn1.HeaderText = "CPF";
-            this.cPFDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.cPFDataGridViewTextBoxColumn1.Name = "cPFDataGridViewTextBoxColumn1";
-            this.cPFDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.cPFDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cPFDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // alunoBindingSource1
-            // 
-            this.alunoBindingSource1.DataSource = typeof(AcademiaDOJO_EF.Dominio.Aluno);
             // 
             // lblAluno
             // 
@@ -279,7 +197,8 @@ namespace AcademiaDOJO_EF
             this.dgvModalidade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeDataGridViewTextBoxColumn,
             this.vezesSemanaDataGridViewTextBoxColumn,
-            this.precoHoraDataGridViewTextBoxColumn});
+            this.precoHoraDataGridViewTextBoxColumn,
+            this.Professor});
             this.dgvModalidade.DataSource = this.modalidadeBindingSource;
             this.dgvModalidade.Location = new System.Drawing.Point(487, 37);
             this.dgvModalidade.Name = "dgvModalidade";
@@ -287,39 +206,8 @@ namespace AcademiaDOJO_EF
             this.dgvModalidade.RowHeadersWidth = 51;
             this.dgvModalidade.RowTemplate.Height = 24;
             this.dgvModalidade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModalidade.Size = new System.Drawing.Size(453, 150);
+            this.dgvModalidade.Size = new System.Drawing.Size(555, 150);
             this.dgvModalidade.TabIndex = 1;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vezesSemanaDataGridViewTextBoxColumn
-            // 
-            this.vezesSemanaDataGridViewTextBoxColumn.DataPropertyName = "VezesSemana";
-            this.vezesSemanaDataGridViewTextBoxColumn.HeaderText = "VezesSemana";
-            this.vezesSemanaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vezesSemanaDataGridViewTextBoxColumn.Name = "vezesSemanaDataGridViewTextBoxColumn";
-            this.vezesSemanaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vezesSemanaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // precoHoraDataGridViewTextBoxColumn
-            // 
-            this.precoHoraDataGridViewTextBoxColumn.DataPropertyName = "PrecoHora";
-            this.precoHoraDataGridViewTextBoxColumn.HeaderText = "PrecoHora";
-            this.precoHoraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.precoHoraDataGridViewTextBoxColumn.Name = "precoHoraDataGridViewTextBoxColumn";
-            this.precoHoraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precoHoraDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // modalidadeBindingSource
-            // 
-            this.modalidadeBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Modalidade);
             // 
             // lblModalidade
             // 
@@ -360,10 +248,133 @@ namespace AcademiaDOJO_EF
             this.btnAlterarModalidade.UseVisualStyleBackColor = true;
             this.btnAlterarModalidade.Click += new System.EventHandler(this.btnNovaModalidade_Click);
             // 
+            // nomeDataGridViewTextBoxColumn2
+            // 
+            this.nomeDataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn2.HeaderText = "Nome - Aluno";
+            this.nomeDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn2.Name = "nomeDataGridViewTextBoxColumn2";
+            this.nomeDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nomeDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // telefoneDataGridViewTextBoxColumn1
+            // 
+            this.telefoneDataGridViewTextBoxColumn1.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn1.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.telefoneDataGridViewTextBoxColumn1.Name = "telefoneDataGridViewTextBoxColumn1";
+            this.telefoneDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.telefoneDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.telefoneDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // cPFDataGridViewTextBoxColumn1
+            // 
+            this.cPFDataGridViewTextBoxColumn1.DataPropertyName = "CPF";
+            this.cPFDataGridViewTextBoxColumn1.HeaderText = "CPF";
+            this.cPFDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.cPFDataGridViewTextBoxColumn1.Name = "cPFDataGridViewTextBoxColumn1";
+            this.cPFDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.cPFDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cPFDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // alunoBindingSource1
+            // 
+            this.alunoBindingSource1.DataSource = typeof(AcademiaDOJO_EF.Dominio.Aluno);
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vezesSemanaDataGridViewTextBoxColumn
+            // 
+            this.vezesSemanaDataGridViewTextBoxColumn.DataPropertyName = "VezesSemana";
+            this.vezesSemanaDataGridViewTextBoxColumn.HeaderText = "VezesSemana";
+            this.vezesSemanaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vezesSemanaDataGridViewTextBoxColumn.Name = "vezesSemanaDataGridViewTextBoxColumn";
+            this.vezesSemanaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vezesSemanaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // precoHoraDataGridViewTextBoxColumn
+            // 
+            this.precoHoraDataGridViewTextBoxColumn.DataPropertyName = "PrecoHora";
+            this.precoHoraDataGridViewTextBoxColumn.HeaderText = "PrecoHora";
+            this.precoHoraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.precoHoraDataGridViewTextBoxColumn.Name = "precoHoraDataGridViewTextBoxColumn";
+            this.precoHoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precoHoraDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modalidadeBindingSource
+            // 
+            this.modalidadeBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Modalidade);
+            // 
+            // nomeDataGridViewTextBoxColumn3
+            // 
+            this.nomeDataGridViewTextBoxColumn3.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn3.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn3.Name = "nomeDataGridViewTextBoxColumn3";
+            this.nomeDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefoneDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cPFDataGridViewTextBoxColumn
+            // 
+            this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
+            this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cPFDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
+            this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cPFDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // turnoDataGridViewTextBoxColumn
+            // 
+            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
+            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
+            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.turnoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // salarioHoraDataGridViewTextBoxColumn
+            // 
+            this.salarioHoraDataGridViewTextBoxColumn.DataPropertyName = "SalarioHora";
+            this.salarioHoraDataGridViewTextBoxColumn.HeaderText = "SalarioHora";
+            this.salarioHoraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salarioHoraDataGridViewTextBoxColumn.Name = "salarioHoraDataGridViewTextBoxColumn";
+            this.salarioHoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.salarioHoraDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Professor);
+            // 
+            // Professor
+            // 
+            this.Professor.DataPropertyName = "Professor";
+            this.Professor.HeaderText = "Professor";
+            this.Professor.MinimumWidth = 6;
+            this.Professor.Name = "Professor";
+            this.Professor.ReadOnly = true;
+            this.Professor.Width = 125;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(984, 641);
+            this.ClientSize = new System.Drawing.Size(1131, 641);
             this.Controls.Add(this.btnAlterarProfessor);
             this.Controls.Add(this.btnExcluirProfessor);
             this.Controls.Add(this.btnNovoProfessor);
@@ -387,11 +398,11 @@ namespace AcademiaDOJO_EF
             this.Text = "Academia";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,6 +439,7 @@ namespace AcademiaDOJO_EF
         private System.Windows.Forms.Button btnNovaModalidade;
         private System.Windows.Forms.Button btnExcluirModalidade;
         private System.Windows.Forms.Button btnAlterarModalidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Professor;
     }
 }
 

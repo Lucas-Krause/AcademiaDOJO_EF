@@ -39,26 +39,30 @@ namespace AcademiaDOJO_EF
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.modalidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxProfessor = new System.Windows.Forms.ComboBox();
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelarModalidade
             // 
             this.btnCancelarModalidade.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelarModalidade.Location = new System.Drawing.Point(141, 132);
+            this.btnCancelarModalidade.Location = new System.Drawing.Point(141, 148);
             this.btnCancelarModalidade.Name = "btnCancelarModalidade";
             this.btnCancelarModalidade.Size = new System.Drawing.Size(86, 23);
-            this.btnCancelarModalidade.TabIndex = 18;
+            this.btnCancelarModalidade.TabIndex = 5;
             this.btnCancelarModalidade.Text = "Cancelar";
             this.btnCancelarModalidade.UseVisualStyleBackColor = true;
             // 
             // btnSalvarModalidade
             // 
             this.btnSalvarModalidade.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSalvarModalidade.Location = new System.Drawing.Point(60, 132);
+            this.btnSalvarModalidade.Location = new System.Drawing.Point(60, 148);
             this.btnSalvarModalidade.Name = "btnSalvarModalidade";
             this.btnSalvarModalidade.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvarModalidade.TabIndex = 17;
+            this.btnSalvarModalidade.TabIndex = 4;
             this.btnSalvarModalidade.Text = "Salvar";
             this.btnSalvarModalidade.UseVisualStyleBackColor = true;
             // 
@@ -67,7 +71,7 @@ namespace AcademiaDOJO_EF
             this.txtPrecoHoraModalidade.Location = new System.Drawing.Point(125, 87);
             this.txtPrecoHoraModalidade.Name = "txtPrecoHoraModalidade";
             this.txtPrecoHoraModalidade.Size = new System.Drawing.Size(100, 22);
-            this.txtPrecoHoraModalidade.TabIndex = 15;
+            this.txtPrecoHoraModalidade.TabIndex = 2;
             // 
             // txtVezesSemanaModalidade
             // 
@@ -75,14 +79,14 @@ namespace AcademiaDOJO_EF
             this.txtVezesSemanaModalidade.Location = new System.Drawing.Point(125, 55);
             this.txtVezesSemanaModalidade.Name = "txtVezesSemanaModalidade";
             this.txtVezesSemanaModalidade.Size = new System.Drawing.Size(100, 22);
-            this.txtVezesSemanaModalidade.TabIndex = 13;
+            this.txtVezesSemanaModalidade.TabIndex = 1;
             // 
             // txtNomeModalidade
             // 
             this.txtNomeModalidade.Location = new System.Drawing.Point(125, 24);
             this.txtNomeModalidade.Name = "txtNomeModalidade";
             this.txtNomeModalidade.Size = new System.Drawing.Size(100, 22);
-            this.txtNomeModalidade.TabIndex = 7;
+            this.txtNomeModalidade.TabIndex = 0;
             // 
             // label5
             // 
@@ -115,12 +119,39 @@ namespace AcademiaDOJO_EF
             // 
             this.modalidadeBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Modalidade);
             // 
+            // cbxProfessor
+            // 
+            this.cbxProfessor.DataSource = this.professorBindingSource;
+            this.cbxProfessor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxProfessor.FormattingEnabled = true;
+            this.cbxProfessor.Location = new System.Drawing.Point(106, 118);
+            this.cbxProfessor.Name = "cbxProfessor";
+            this.cbxProfessor.Size = new System.Drawing.Size(121, 24);
+            this.cbxProfessor.TabIndex = 3;
+            this.cbxProfessor.SelectedIndexChanged += new System.EventHandler(this.cbxProfessor_SelectionChangeCommitted);
+            this.cbxProfessor.SelectionChangeCommitted += new System.EventHandler(this.cbxProfessor_SelectionChangeCommitted);
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataSource = typeof(AcademiaDOJO_EF.Dominio.Professor);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Professor";
+            // 
             // FormModalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 213);
+            this.ClientSize = new System.Drawing.Size(250, 228);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbxProfessor);
             this.Controls.Add(this.btnCancelarModalidade);
             this.Controls.Add(this.btnSalvarModalidade);
             this.Controls.Add(this.txtPrecoHoraModalidade);
@@ -137,6 +168,7 @@ namespace AcademiaDOJO_EF
             this.Text = "FormModalidade";
             this.Load += new System.EventHandler(this.FormModalidade_Load);
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +184,8 @@ namespace AcademiaDOJO_EF
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxProfessor;
+        private System.Windows.Forms.BindingSource professorBindingSource;
+        private System.Windows.Forms.Label label2;
     }
 }

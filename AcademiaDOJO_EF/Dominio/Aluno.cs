@@ -8,6 +8,8 @@ namespace AcademiaDOJO_EF.Dominio
 {
     public class Aluno : Pessoa
     {
+        public virtual Modalidade Modalidade { get; set; }
+
         public Aluno Clone()
         {
             var aluno = new Aluno()
