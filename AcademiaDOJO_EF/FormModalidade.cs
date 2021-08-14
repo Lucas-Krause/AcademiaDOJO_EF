@@ -26,8 +26,10 @@ namespace AcademiaDOJO_EF
             txtNomeModalidade.DataBindings.Add("Text", modalidade, "Nome");
             txtPrecoHoraModalidade.DataBindings.Add("Text", modalidade, "PrecoHora");
             cbxVezesSemana.DataBindings.Add("SelectedItem", modalidade, "VezesSemana");
-            professorBindingSource.DataSource = new AcademiaContext().Professores.ToList();
-
+            using (var db = new AcademiaContext())
+            {
+                professorBindingSource.DataSource = db.Professores.ToList();
+            }
             cbxProfessor.DataBindings.Add("SelectedItem", modalidade, "Professor");
 
             if (modalidade.Professor == null)

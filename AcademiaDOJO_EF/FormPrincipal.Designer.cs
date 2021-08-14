@@ -30,6 +30,7 @@ namespace AcademiaDOJO_EF
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.dgvProfessor = new System.Windows.Forms.DataGridView();
             this.lblProfessor = new System.Windows.Forms.Label();
             this.dgvAluno = new System.Windows.Forms.DataGridView();
@@ -46,6 +47,8 @@ namespace AcademiaDOJO_EF
             this.btnExcluirModalidade = new System.Windows.Forms.Button();
             this.btnAlterarModalidade = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nomeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +68,7 @@ namespace AcademiaDOJO_EF
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
@@ -75,6 +79,7 @@ namespace AcademiaDOJO_EF
             this.dgvProfessor.AllowUserToAddRows = false;
             this.dgvProfessor.AllowUserToDeleteRows = false;
             this.dgvProfessor.AutoGenerateColumns = false;
+            this.dgvProfessor.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProfessor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProfessor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeDataGridViewTextBoxColumn3,
@@ -83,7 +88,7 @@ namespace AcademiaDOJO_EF
             this.turnoDataGridViewTextBoxColumn,
             this.salarioHoraDataGridViewTextBoxColumn});
             this.dgvProfessor.DataSource = this.professorBindingSource;
-            this.dgvProfessor.Location = new System.Drawing.Point(12, 26);
+            this.dgvProfessor.Location = new System.Drawing.Point(65, 89);
             this.dgvProfessor.Name = "dgvProfessor";
             this.dgvProfessor.ReadOnly = true;
             this.dgvProfessor.RowHeadersWidth = 51;
@@ -95,10 +100,10 @@ namespace AcademiaDOJO_EF
             // lblProfessor
             // 
             this.lblProfessor.AutoSize = true;
-            this.lblProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfessor.Location = new System.Drawing.Point(8, 3);
+            this.lblProfessor.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfessor.Location = new System.Drawing.Point(61, 63);
             this.lblProfessor.Name = "lblProfessor";
-            this.lblProfessor.Size = new System.Drawing.Size(86, 20);
+            this.lblProfessor.Size = new System.Drawing.Size(87, 23);
             this.lblProfessor.TabIndex = 2;
             this.lblProfessor.Text = "Professor";
             // 
@@ -107,6 +112,7 @@ namespace AcademiaDOJO_EF
             this.dgvAluno.AllowUserToAddRows = false;
             this.dgvAluno.AllowUserToDeleteRows = false;
             this.dgvAluno.AutoGenerateColumns = false;
+            this.dgvAluno.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeDataGridViewTextBoxColumn2,
@@ -114,28 +120,28 @@ namespace AcademiaDOJO_EF
             this.telefoneDataGridViewTextBoxColumn1,
             this.Modalidade});
             this.dgvAluno.DataSource = this.alunoBindingSource1;
-            this.dgvAluno.Location = new System.Drawing.Point(1259, 26);
+            this.dgvAluno.Location = new System.Drawing.Point(411, 431);
             this.dgvAluno.Name = "dgvAluno";
             this.dgvAluno.ReadOnly = true;
             this.dgvAluno.RowHeadersWidth = 51;
             this.dgvAluno.RowTemplate.Height = 24;
             this.dgvAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAluno.Size = new System.Drawing.Size(553, 297);
+            this.dgvAluno.Size = new System.Drawing.Size(579, 297);
             this.dgvAluno.TabIndex = 4;
             // 
             // lblAluno
             // 
             this.lblAluno.AutoSize = true;
-            this.lblAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAluno.Location = new System.Drawing.Point(1255, 3);
+            this.lblAluno.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAluno.Location = new System.Drawing.Point(407, 405);
             this.lblAluno.Name = "lblAluno";
-            this.lblAluno.Size = new System.Drawing.Size(55, 20);
+            this.lblAluno.Size = new System.Drawing.Size(61, 23);
             this.lblAluno.TabIndex = 5;
             this.lblAluno.Text = "Aluno";
             // 
             // btnNovoAluno
             // 
-            this.btnNovoAluno.Location = new System.Drawing.Point(1259, 329);
+            this.btnNovoAluno.Location = new System.Drawing.Point(411, 734);
             this.btnNovoAluno.Name = "btnNovoAluno";
             this.btnNovoAluno.Size = new System.Drawing.Size(75, 23);
             this.btnNovoAluno.TabIndex = 6;
@@ -145,7 +151,7 @@ namespace AcademiaDOJO_EF
             // 
             // btnExcluirAluno
             // 
-            this.btnExcluirAluno.Location = new System.Drawing.Point(1421, 329);
+            this.btnExcluirAluno.Location = new System.Drawing.Point(573, 734);
             this.btnExcluirAluno.Name = "btnExcluirAluno";
             this.btnExcluirAluno.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirAluno.TabIndex = 7;
@@ -155,7 +161,7 @@ namespace AcademiaDOJO_EF
             // 
             // btnAlterarAluno
             // 
-            this.btnAlterarAluno.Location = new System.Drawing.Point(1340, 329);
+            this.btnAlterarAluno.Location = new System.Drawing.Point(492, 734);
             this.btnAlterarAluno.Name = "btnAlterarAluno";
             this.btnAlterarAluno.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarAluno.TabIndex = 9;
@@ -165,7 +171,8 @@ namespace AcademiaDOJO_EF
             // 
             // btnAlterarProfessor
             // 
-            this.btnAlterarProfessor.Location = new System.Drawing.Point(93, 329);
+            this.btnAlterarProfessor.ForeColor = System.Drawing.Color.Black;
+            this.btnAlterarProfessor.Location = new System.Drawing.Point(146, 392);
             this.btnAlterarProfessor.Name = "btnAlterarProfessor";
             this.btnAlterarProfessor.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarProfessor.TabIndex = 17;
@@ -175,7 +182,7 @@ namespace AcademiaDOJO_EF
             // 
             // btnExcluirProfessor
             // 
-            this.btnExcluirProfessor.Location = new System.Drawing.Point(174, 329);
+            this.btnExcluirProfessor.Location = new System.Drawing.Point(227, 392);
             this.btnExcluirProfessor.Name = "btnExcluirProfessor";
             this.btnExcluirProfessor.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirProfessor.TabIndex = 15;
@@ -185,7 +192,7 @@ namespace AcademiaDOJO_EF
             // 
             // btnNovoProfessor
             // 
-            this.btnNovoProfessor.Location = new System.Drawing.Point(12, 329);
+            this.btnNovoProfessor.Location = new System.Drawing.Point(65, 392);
             this.btnNovoProfessor.Name = "btnNovoProfessor";
             this.btnNovoProfessor.Size = new System.Drawing.Size(75, 23);
             this.btnNovoProfessor.TabIndex = 14;
@@ -198,6 +205,7 @@ namespace AcademiaDOJO_EF
             this.dgvModalidade.AllowUserToAddRows = false;
             this.dgvModalidade.AllowUserToDeleteRows = false;
             this.dgvModalidade.AutoGenerateColumns = false;
+            this.dgvModalidade.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvModalidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModalidade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeDataGridViewTextBoxColumn,
@@ -205,7 +213,8 @@ namespace AcademiaDOJO_EF
             this.precoHoraDataGridViewTextBoxColumn,
             this.professorDataGridViewTextBoxColumn});
             this.dgvModalidade.DataSource = this.modalidadeBindingSource;
-            this.dgvModalidade.Location = new System.Drawing.Point(698, 26);
+            this.dgvModalidade.GridColor = System.Drawing.Color.LightGray;
+            this.dgvModalidade.Location = new System.Drawing.Point(753, 89);
             this.dgvModalidade.Name = "dgvModalidade";
             this.dgvModalidade.ReadOnly = true;
             this.dgvModalidade.RowHeadersWidth = 51;
@@ -217,16 +226,16 @@ namespace AcademiaDOJO_EF
             // lblModalidade
             // 
             this.lblModalidade.AutoSize = true;
-            this.lblModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModalidade.Location = new System.Drawing.Point(695, 3);
+            this.lblModalidade.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Bold);
+            this.lblModalidade.Location = new System.Drawing.Point(1214, 63);
             this.lblModalidade.Name = "lblModalidade";
-            this.lblModalidade.Size = new System.Drawing.Size(101, 20);
+            this.lblModalidade.Size = new System.Drawing.Size(109, 23);
             this.lblModalidade.TabIndex = 3;
             this.lblModalidade.Text = "Modalidade";
             // 
             // btnNovaModalidade
             // 
-            this.btnNovaModalidade.Location = new System.Drawing.Point(699, 329);
+            this.btnNovaModalidade.Location = new System.Drawing.Point(754, 392);
             this.btnNovaModalidade.Name = "btnNovaModalidade";
             this.btnNovaModalidade.Size = new System.Drawing.Size(75, 23);
             this.btnNovaModalidade.TabIndex = 10;
@@ -236,7 +245,7 @@ namespace AcademiaDOJO_EF
             // 
             // btnExcluirModalidade
             // 
-            this.btnExcluirModalidade.Location = new System.Drawing.Point(861, 329);
+            this.btnExcluirModalidade.Location = new System.Drawing.Point(916, 392);
             this.btnExcluirModalidade.Name = "btnExcluirModalidade";
             this.btnExcluirModalidade.Size = new System.Drawing.Size(75, 23);
             this.btnExcluirModalidade.TabIndex = 11;
@@ -246,7 +255,7 @@ namespace AcademiaDOJO_EF
             // 
             // btnAlterarModalidade
             // 
-            this.btnAlterarModalidade.Location = new System.Drawing.Point(780, 329);
+            this.btnAlterarModalidade.Location = new System.Drawing.Point(835, 392);
             this.btnAlterarModalidade.Name = "btnAlterarModalidade";
             this.btnAlterarModalidade.Size = new System.Drawing.Size(75, 23);
             this.btnAlterarModalidade.TabIndex = 13;
@@ -258,7 +267,31 @@ namespace AcademiaDOJO_EF
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Modalidade";
             this.dataGridViewTextBoxColumn1.HeaderText = "Modalidade";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(639, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 44);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Academia";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::AcademiaDOJO_EF.Properties.Resources.academia__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(790, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // nomeDataGridViewTextBoxColumn2
             // 
@@ -294,8 +327,10 @@ namespace AcademiaDOJO_EF
             // 
             this.Modalidade.DataPropertyName = "Modalidade";
             this.Modalidade.HeaderText = "Modalidade";
+            this.Modalidade.MinimumWidth = 6;
             this.Modalidade.Name = "Modalidade";
             this.Modalidade.ReadOnly = true;
+            this.Modalidade.Width = 125;
             // 
             // alunoBindingSource1
             // 
@@ -394,7 +429,10 @@ namespace AcademiaDOJO_EF
             // FormPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1823, 358);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(1375, 766);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterarProfessor);
             this.Controls.Add(this.btnExcluirProfessor);
             this.Controls.Add(this.btnNovoProfessor);
@@ -411,6 +449,7 @@ namespace AcademiaDOJO_EF
             this.Controls.Add(this.dgvModalidade);
             this.Controls.Add(this.dgvProfessor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPrincipal";
@@ -420,6 +459,7 @@ namespace AcademiaDOJO_EF
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modalidadeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
@@ -462,6 +502,8 @@ namespace AcademiaDOJO_EF
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modalidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

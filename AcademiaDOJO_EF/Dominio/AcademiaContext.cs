@@ -15,8 +15,10 @@ namespace AcademiaDOJO_EF.Dominio
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Pessoa> Pessoas { get; set; }
 
-
-        public AcademiaContext():base(nameOrConnectionString:"Academia"){ }
+        public AcademiaContext():base(nameOrConnectionString:"Academia")
+        {
+            
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

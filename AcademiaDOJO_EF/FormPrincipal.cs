@@ -31,14 +31,15 @@ namespace AcademiaDOJO_EF
             }
 
             var professor = professorBindingSource.Current as Professor;
+
             if (professor == null) return;
 
             var temporario = new Professor();
             temporario = professor.Clone();
 
-            using (var formP = new FormProfessor(temporario))
+            using (var formProfessor = new FormProfessor(temporario))
             {
-                if (formP.ShowDialog() == DialogResult.OK)
+                if (formProfessor.ShowDialog() == DialogResult.OK)
                 {
                     professor.FromProfessor(temporario);
                     if (new RepositoryProfessor().Save(professor, sender == btnNovoProfessor) > 0)
@@ -221,6 +222,11 @@ namespace AcademiaDOJO_EF
             var aluno = alunoBindingSource1.Current as Aluno;
             MessageBox.Show($"O aluno foi deletado com sucesso.",
                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

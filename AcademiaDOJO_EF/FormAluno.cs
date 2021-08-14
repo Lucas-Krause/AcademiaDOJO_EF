@@ -1,12 +1,6 @@
 ﻿using AcademiaDOJO_EF.Dominio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AcademiaDOJO_EF
@@ -25,7 +19,12 @@ namespace AcademiaDOJO_EF
             txtNome.DataBindings.Add("Text", aluno, "Nome");
             mskCPF.DataBindings.Add("Text", aluno, "CPF");
             mskTelefone.DataBindings.Add("Text", aluno, "Telefone");
-            modalidadeBindingSource.DataSource = new AcademiaContext().Modalidades.ToList();
+
+            using (var db = new AcademiaContext())
+            { 
+              modalidadeBindingSource.DataSource = db.Modalidades.ToList();
+            }
+            
 
             cbxModalidade.DataBindings.Add("SelectedItem", aluno, "Modalidade");
 

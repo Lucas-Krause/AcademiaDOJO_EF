@@ -14,6 +14,7 @@ namespace AcademiaDOJO_EF.Dominio
         public int VezesSemana { get; set; }
         public double PrecoHora { get; set; }
         public virtual Professor Professor { get; set; }
+
         public Modalidade Clone()
         {
             var modalidade = new Modalidade()
